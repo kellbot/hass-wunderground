@@ -4,6 +4,7 @@ Requires an wunderground API key from http://api.wunderground.com/weather/api
 
 Enable in config as such:
 
+```yaml
 wunderground:
   api_key: xxxxxxxxxx
   pws_id: XXXXXXXX
@@ -48,6 +49,7 @@ wunderground:
     - precip_today_in
     - precip_today_metric
     - icon
+```
 
 Refreshes every 5 minutes
 
