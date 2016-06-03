@@ -14,7 +14,7 @@ Refreshes every 5 minutes
 
 ## Installation
 
-Place sensors/wunderground.py in the /custom_components/sensors directory (you may need to create it) wherever your hass config file lies. Restart hass.
+Place sensors/wunderground.py in the /custom_components/sensor/ directory (you may need to create it) wherever your hass config file lies. Restart hass.
 
 
 ## To-Do
