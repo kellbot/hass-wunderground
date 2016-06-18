@@ -9,8 +9,25 @@ sensor:
   platform: wunderground
   api_key: xxxxxxxxxx
   pws_id: XXXXXXXX
+```
 
 Refreshes every 5 minutes
+
+Individual attributes can be added to the display by using sensor templates (thanks @rpitera for providing the example:
+
+```yaml
+sensor:
+   platform: template
+   sensors:
+     pws_stationid:
+       value_template: '{{ states.sensor.weather_underground_pws.attributes.station_id }}'
+     pws_location:
+       value_template: '{{ states.sensor.weather_underground_pws.attributes.display_location.full }}'
+     pws_elevation:
+       value_template: '{{ states.sensor.weather_underground_pws.attributes.observation_location.elevation }}'
+```
+
+These sensors can then be customized using groups, custom icons, etc. Sample configurations can be found at https://community.home-assistant.io/t/is-anyone-doing-anything-with-weather-underground/763/72
 
 ## Installation
 
