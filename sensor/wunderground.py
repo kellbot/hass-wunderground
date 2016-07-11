@@ -86,8 +86,12 @@ class WUndergroundData(object):
         """Get the latest data from wunderground"""
         try:
             result = requests.get(self._resource + self._api_key +
-                                  '/conditions/q/pws:' + self._pws_id + '.json')
-            self.data = result.json()['current_observation']
+                                  '/conditions/forecast/q/pws:' + self._pws_id + '.json')
+            current = result.json()['current_observation']
+            forecast = result.json()['forecast']
+            combined = current.copy()
+            combined.update(forecast)
+            self.data = combined
         except requests.exceptions.ConnectionError:
             _LOGGER.error("No route to host/endpoint: %s", self._resource)
             self.data = None
