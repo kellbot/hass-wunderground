@@ -7,7 +7,7 @@ from homeassistant.util import Throttle
 from homeassistant.const import CONF_API_KEY
 
 CONF_PWS_ID = 'pws_id'
-_RESOURCE = 'http://api.wunderground.com/api/'
+_RESOURCE = 'https://api.wunderground.com/api/'
 _LOGGER = logging.getLogger(__name__)
 
 # Return cached results if last scan was less then this time ago.
